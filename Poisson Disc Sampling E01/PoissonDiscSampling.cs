@@ -21,7 +21,7 @@ public static class PoissonDiscSampling {
 			{
 				float angle = Random.value * Mathf.PI * 2;
 				Vector2 dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
-				Vector2 candidate = spawnCentre + dir * Random.Range(radius, 2*radius);
+				Vector2 candidate = spawnCentre + dir * Mathf.Sqrt(Random.Range(radius*radius, 4*radius*radius));
 				if (IsValid(candidate, sampleRegionSize, cellSize, radius, points, grid)) {
 					points.Add(candidate);
 					spawnPoints.Add(candidate);
